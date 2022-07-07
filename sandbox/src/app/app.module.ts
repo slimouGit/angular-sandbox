@@ -8,6 +8,8 @@ import { PropertyBindingComponent } from './property-binding/property-binding.co
 import { OneWayBindingComponent } from './one-way-binding/one-way-binding.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { EmitParentComponent } from './emit-parent/emit-parent.component';
+import { EmitChildComponent } from './emit-parent/emit-child/emit-child.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.compon
     PropertyBindingComponent,
     OneWayBindingComponent,
     EventBindingComponent,
-    TwoWayBindingComponent
+    TwoWayBindingComponent,
+    EmitParentComponent,
+    EmitChildComponent
   ],
   imports: [
     BrowserModule,
