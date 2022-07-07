@@ -12,4 +12,8 @@ export class EventBindingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  cookBacon(){
+    console.log("cook bacon")
+  }
+
 }
