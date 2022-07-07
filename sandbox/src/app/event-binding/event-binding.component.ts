@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventBindingComponent implements OnInit {
 
+  message:string = '';
+
   constructor() { }
 
   ngOnInit(): void {
@@ -14,6 +16,7 @@ export class EventBindingComponent implements OnInit {
 
   cookBacon(){
     console.log("cook bacon")
+    this.message = 'your bacon is cooking';
   }
 
 }
