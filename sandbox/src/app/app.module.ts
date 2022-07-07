@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { PropertyBindingComponent } from './property-binding/property-binding.component';
 import { OneWayBindingComponent } from './one-way-binding/one-way-binding.component';
+import { EventBindingComponent } from './event-binding/event-binding.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PropertyBindingComponent,
-    OneWayBindingComponent
+    OneWayBindingComponent,
+    EventBindingComponent
   ],
   imports: [
     BrowserModule
