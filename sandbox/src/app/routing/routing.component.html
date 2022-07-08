@@ -1,8 +1,20 @@
-<h2>routing example</h2>
-<ul>
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/shop">Shop</a></li>
-    <li><a routerLink="/basket">Basket</a></li>
-</ul>
-<router-outlet></router-outlet>
+<div class="container">
+
+
+    <h2>routing example</h2>
+    <div class="row">
+        <div>
+            <ul class="nav nav-tabs">
+                <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Home</a></li>
+                <li role="presentation" routerLinkActive="active"><a routerLink="/shop">Shop</a></li>
+                <li role="presentation" routerLinkActive="active"><a routerLink="/basket">Basket</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+
+
+        <router-outlet></router-outlet>
+    </div>
+</div>
 <hr>
