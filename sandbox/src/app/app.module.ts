@@ -15,11 +15,13 @@ import { HomeComponent } from './routing/home/home.component';
 import { ShopComponent } from './routing/shop/shop.component';
 import { BasketComponent } from './routing/basket/basket.component';
 import { Route, RouterModule, Routes } from '@angular/router';
+import { ItemComponent } from './routing/basket/item/item.component';
 
 const appRoutes : Routes = [
   {path: '', component: HomeComponent},
   {path: 'shop', component: ShopComponent},
-  {path: 'basket',component:BasketComponent}
+  {path: 'basket',component:BasketComponent},
+  {path: 'basket/:id/:name',component:BasketComponent}
 ];
 
 @NgModule({
@@ -34,7 +36,8 @@ const appRoutes : Routes = [
     RoutingComponent,
     HomeComponent,
     ShopComponent,
-    BasketComponent
+    BasketComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,

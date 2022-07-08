@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-basket',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasketComponent implements OnInit {
 
-  constructor() { }
+  items = [
+    {
+      id: 1,
+      name: 'Milk'
+    },
+    {
+      id: 2,
+      name: 'Banana'
+    },
+    {
+      id: 3,
+      name: 'Strawberry'
+    }
+  ];
+
+  constructor(private route:ActivatedRoute) {
+   }
 
   ngOnInit(): void {
+    
   }
 
 }
