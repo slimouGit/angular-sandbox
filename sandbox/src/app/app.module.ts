@@ -21,7 +21,8 @@ const appRoutes : Routes = [
   {path: '', component: HomeComponent},
   {path: 'shop', component: ShopComponent},
   {path: 'basket',component:BasketComponent},
-  {path: 'basket/:id/:name',component:BasketComponent}
+  {path: 'basket/:id/:name',component:BasketComponent},
+  {path: 'basket/:id/edit',component:ItemComponent}
 ];
 
 @NgModule({

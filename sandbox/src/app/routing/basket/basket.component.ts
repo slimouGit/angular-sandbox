@@ -1,31 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BasketService } from './basket.service';
 
 
 @Component({
   selector: 'app-basket',
   templateUrl: './basket.component.html',
-  styleUrls: ['./basket.component.css']
+  styleUrls: ['./basket.component.css'],
+  providers: [BasketService]
 })
 export class BasketComponent implements OnInit {
 
-  items = [
-    {
-      id: 1,
-      name: 'Milk'
-    },
-    {
-      id: 2,
-      name: 'Banana'
-    },
-    {
-      id: 3,
-      name: 'Strawberry'
-    }
-  ];
+  constructor(private route:ActivatedRoute, private basketService : BasketService) {
+  }
 
-  constructor(private route:ActivatedRoute) {
-   }
+  items = this.basketService.getItems();  
 
   ngOnInit(): void {
     

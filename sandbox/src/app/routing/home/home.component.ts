@@ -17,4 +17,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/shop']);
   }
 
+  onLoadItem(id: number){
+    this.router.navigate(['/basket', id, 'edit'], {queryParams: {allowEdit: '1'}, fragment: 'loading'});
+  }
+
 }
