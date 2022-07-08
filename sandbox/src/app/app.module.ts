@@ -10,6 +10,17 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { EmitParentComponent } from './emit-parent/emit-parent.component';
 import { EmitChildComponent } from './emit-parent/emit-child/emit-child.component';
+import { RoutingComponent } from './routing/routing.component';
+import { HomeComponent } from './routing/home/home.component';
+import { ShopComponent } from './routing/shop/shop.component';
+import { BasketComponent } from './routing/basket/basket.component';
+import { Route, RouterModule, Routes } from '@angular/router';
+
+const appRoutes : Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'shop', component: ShopComponent},
+  {path: 'basket',component:BasketComponent}
+];
 
 @NgModule({
   declarations: [
@@ -19,11 +30,16 @@ import { EmitChildComponent } from './emit-parent/emit-child/emit-child.componen
     EventBindingComponent,
     TwoWayBindingComponent,
     EmitParentComponent,
-    EmitChildComponent
+    EmitChildComponent,
+    RoutingComponent,
+    HomeComponent,
+    ShopComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
