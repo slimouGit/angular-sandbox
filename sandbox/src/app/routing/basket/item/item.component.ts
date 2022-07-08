@@ -8,17 +8,18 @@ import { BasketService } from '../basket.service';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-  item: { id: number, name: string };
-  
+  item!: { id: number, name: string };
 
-  constructor(private route: ActivatedRoute, private basketService : BasketService) { 
+
+  constructor(private route: ActivatedRoute) { 
+
+  }
+
+  ngOnInit() {
     this.item = {
       id: this.route.snapshot.params['id'],
       name: this.route.snapshot.params['name']
     };
-  }
-
-  ngOnInit() {
     this.route.params.subscribe(
       (params: Params) => {
         this.item.id = params['id'];
@@ -26,7 +27,6 @@ export class ItemComponent implements OnInit {
       }
     );
 
-    
   }
 
 }

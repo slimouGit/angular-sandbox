@@ -16,6 +16,7 @@ import { ShopComponent } from './routing/shop/shop.component';
 import { BasketComponent } from './routing/basket/basket.component';
 import { Route, RouterModule, Routes } from '@angular/router';
 import { ItemComponent } from './routing/basket/item/item.component';
+import { PageNotFoundComponent } from './routing/page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,7 +27,9 @@ const appRoutes: Routes = [
       { path: ':id/edit', component: ItemComponent }
     ]
   }
-
+  ,
+  { path: 'not-found', component: PageNotFoundComponent },
+  { path: '**', redirectTo: '/not-found' }
 ];
 
 @NgModule({
@@ -42,7 +45,8 @@ const appRoutes: Routes = [
     HomeComponent,
     ShopComponent,
     BasketComponent,
-    ItemComponent
+    ItemComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
