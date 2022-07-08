@@ -17,12 +17,16 @@ import { BasketComponent } from './routing/basket/basket.component';
 import { Route, RouterModule, Routes } from '@angular/router';
 import { ItemComponent } from './routing/basket/item/item.component';
 
-const appRoutes : Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'shop', component: ShopComponent},
-  {path: 'basket',component:BasketComponent},
-  {path: 'basket/:id/:name',component:BasketComponent},
-  {path: 'basket/:id/edit',component:ItemComponent}
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'shop', component: ShopComponent },
+  {
+    path: 'basket', component: BasketComponent, children: [
+      { path: ':id/:name', component: BasketComponent },
+      { path: ':id/edit', component: ItemComponent }
+    ]
+  }
+
 ];
 
 @NgModule({
