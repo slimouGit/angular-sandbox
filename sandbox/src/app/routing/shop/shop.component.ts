@@ -15,8 +15,8 @@ export class ShopComponent implements OnInit {
   id:number;
 
   constructor(private router: Router, private route:ActivatedRoute, private shopService:ShopService) {
-    this.items = [];
-    this.id = 0;
+    this.items;
+    this.id;
   }
 
   ngOnInit(): void {
@@ -26,6 +26,9 @@ export class ShopComponent implements OnInit {
 
   onSelectItem(id:number){
     console.log("Selected item", id);
+    this.id = id;
+    console.log("this id", this.id);
+    this.router.navigate(['basket',this.id,'add']);
   }
 
 }
