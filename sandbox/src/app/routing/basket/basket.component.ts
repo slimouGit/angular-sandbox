@@ -14,6 +14,8 @@ export class BasketComponent implements OnInit {
   id: number;
   item: Item;
 
+  itemsInBasket:Item[];
+
   constructor(private route: ActivatedRoute, private router: Router, private shopService: ShopService) {
 
   }
@@ -22,6 +24,11 @@ export class BasketComponent implements OnInit {
     console.log(this.router.url);
     console.log(this.route.queryParams);
 
+    this.shopService.itemsChanged.subscribe(
+      (items:Item[]) => {
+        this.itemsInBasket = items;
+      }
+    );
 
     this.route.params.subscribe(
       (params: Params) => {
@@ -31,14 +38,15 @@ export class BasketComponent implements OnInit {
 
       }
     )
-    this.collectItems(this.item);
+    this.collectItems(this.id);
 
 
   }
 
-  private collectItems(item: Item) {
-    this.item = this.shopService.getItem(this.id);
-    console.log(this.item.name);
+  private collectItems(id: number) {
+    this.item = this.shopService.getItem(id);
+    console.log("item in basket ", this.item.name);
+    this.shopService.addItemToBasket(this.item);
   }
 
 }

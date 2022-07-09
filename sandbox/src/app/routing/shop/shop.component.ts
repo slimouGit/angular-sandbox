@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {Item} from "./item/item.model";
 import {ShopService} from "./shop.service";
@@ -10,7 +10,6 @@ import {ShopService} from "./shop.service";
   providers: [ShopService]
 })
 export class ShopComponent implements OnInit {
-
   items: Item[];
   id:number;
 
@@ -22,6 +21,7 @@ export class ShopComponent implements OnInit {
   ngOnInit(): void {
     this.items = this.shopService.getItems();
     this.items.forEach(item => console.log(item.name));
+
     }
 
   onSelectItem(id:number){

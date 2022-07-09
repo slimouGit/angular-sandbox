@@ -1,2 +1,6 @@
 <p>basket works!</p>
-<p>{{item.name}} {{item.price}}</p>
+<ul>
+  <li *ngFor="let item of itemsInBasket">
+    {{item.name}}
+  </li>
+</ul>
