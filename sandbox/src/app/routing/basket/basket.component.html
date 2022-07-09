@@ -1,6 +1,12 @@
-<p>basket works!</p>
+<h2>Your Basket ({{itemsInBasket.length}})</h2>
+<div *ngIf="itemsInBasket.length === 0">
+  <p>Your basket is empty</p>
+  <a [routerLink]="['/shop']"> back to shop </a>
+</div>
 <ul>
-  <li *ngFor="let item of itemsInBasket">
-    {{item.name}}
+  <li *ngFor="let basketItem of itemsInBasket; index as i;">
+    {{i + 1}} - {{basketItem.name}} - {{basketItem.price}} €
   </li>
 </ul>
+
+<button *ngIf="itemsInBasket.length > 0" class="btn btn-primary" (click)="emptyBasket()">clear all</button>

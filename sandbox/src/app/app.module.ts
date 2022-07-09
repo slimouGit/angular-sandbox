@@ -17,13 +17,16 @@ import {ShopComponent} from './routing/shop/shop.component';
 import {Route, RouterModule, Routes} from '@angular/router';
 import {PageNotFoundComponent} from './routing/page-not-found/page-not-found.component';
 import {ItemDetailComponent} from './routing/shop/item-detail/item-detail.component';
+import { HeaderComponent } from './routing/header/header.component';
+import {ShopService} from "./routing/shop/shop.service";
+import {BasketService} from "./routing/basket/basket.service";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'shop', component: ShopComponent},
   {path: 'basket', component: BasketComponent},
   {path: 'basket/:id/add', component: BasketComponent},
-  {path: 'basket/:id', component: BasketComponent},
+  {path: 'view/:id', component: ItemDetailComponent},
   {path: 'not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: '/not-found'}
 ];
@@ -42,14 +45,15 @@ const appRoutes: Routes = [
     ShopComponent,
     BasketComponent,
     PageNotFoundComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ShopService, BasketService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
