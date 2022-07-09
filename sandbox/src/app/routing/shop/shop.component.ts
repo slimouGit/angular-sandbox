@@ -1,18 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import {Item} from "./item/item.model";
+import {ShopService} from "./shop.service";
 
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.css']
+  styleUrls: ['./shop.component.css'],
+  providers: [ShopService]
 })
 export class ShopComponent implements OnInit {
 
-  constructor(private router: Router, private route:ActivatedRoute) { }
+  items: Item[];
+  id:number;
 
-  ngOnInit(): void {
+  constructor(private router: Router, private route:ActivatedRoute, private shopService:ShopService) {
+    this.items = [];
+    this.id = 0;
   }
 
-  
+  ngOnInit(): void {
+    this.items = this.shopService.getItems();
+    this.items.forEach(item => console.log(item.name));
+    }
+
+  onSelectItem(id:number){
+    console.log("Selected item", id);
+  }
 
 }

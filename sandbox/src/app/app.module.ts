@@ -15,16 +15,15 @@ import { HomeComponent } from './routing/home/home.component';
 import { ShopComponent } from './routing/shop/shop.component';
 import { BasketComponent } from './routing/basket/basket.component';
 import { Route, RouterModule, Routes } from '@angular/router';
-import { ItemComponent } from './routing/basket/item/item.component';
 import { PageNotFoundComponent } from './routing/page-not-found/page-not-found.component';
+import { ItemDetailComponent } from './routing/shop/item-detail/item-detail.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'shop', component: ShopComponent },
   {
     path: 'basket', component: BasketComponent, children: [
-      { path: ':id/:name', component: BasketComponent },
-      { path: ':id/edit', component: ItemComponent }
+      { path: ':id/:name', component: BasketComponent }
     ]
   }
   ,
@@ -45,8 +44,8 @@ const appRoutes: Routes = [
     HomeComponent,
     ShopComponent,
     BasketComponent,
-    ItemComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ItemDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,5 @@
 <p>shop works!</p>
+
+<ul>
+  <li (click)="onSelectItem(item.id)" *ngFor="let item of items">{{item.id}} <b>{{item.name}}</b></li>
+</ul>
