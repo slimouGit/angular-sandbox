@@ -14,4 +14,12 @@ export class BasketService{
   getItemsInBasket() {
     return this.basketItems.slice();
   }
+
+  getTotalCost(itemsInBasket: Item[]) {
+    let totalCost: number = 0;
+    for(let i = 0; i<itemsInBasket.length; i++){
+      totalCost += itemsInBasket[i].price;
+    }
+    return +totalCost.toFixed(2);
+  }
 }

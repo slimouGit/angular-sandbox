@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Params, Router} from "@angular/router";
 import {Item} from "../shop/item/item.model";
 import {BasketService} from "./basket.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 @Component({
@@ -11,6 +11,7 @@ import {BasketService} from "./basket.service";
 })
 export class BasketComponent implements OnInit {
   itemsInBasket:Item[];
+  totalCost:number;
 
   constructor(private route: ActivatedRoute, private router: Router, private basketService: BasketService) { }
 
@@ -22,6 +23,7 @@ export class BasketComponent implements OnInit {
     //   }
     // );
     console.log("this.itemsInBasket", this.itemsInBasket);
+    this.totalCost = this.basketService.getTotalCost(this.itemsInBasket);
   }
 
   emptyBasket() {

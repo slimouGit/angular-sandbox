@@ -6,8 +6,8 @@ import {BasketService} from "../basket/basket.service";
 export class ShopService {
   itemsChanged = new EventEmitter<Item[]>();
   private items: Item[] = [
-    new Item(0, "Milk", "1,20"),
-    new Item(1, "Cheese", "2,05")
+    new Item(0, "Milk", 1.2),
+    new Item(1, "Cheese", 2.05)
   ];
 
   constructor(private basketService: BasketService) {
