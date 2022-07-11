@@ -18,6 +18,9 @@ export class ObservableComponent implements OnInit {
       let count = 0;
       setInterval(()=> {
         observer.next(count);
+        if(count>5){
+          observer.error(new Error('Count is greater 5!'));          
+        }
         count++;
       }, 1000);
     });
@@ -25,6 +28,9 @@ export class ObservableComponent implements OnInit {
     this.firstObsSubscription = customInternalObservable.subscribe(data => {
         console.log(data);
         this.counter = data;
+    }, error => {
+        console.log(error);
+        alert(error.message);
     })
   }
 
