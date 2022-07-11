@@ -2,27 +2,39 @@
 <div class="container">
     <div class="row">
 
-        <form [formGroup]="signupForm">
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
             <div id="user-data" >
                 <div class="form-group">
                     <label for="forname">Forname</label>
-                    <input type="text" id="forname" class="form-control" formControlName="forname" >
+                    <input type="text" id="forname" class="form-control" formControlName="forname">
+                    <span 
+                    *ngIf="!signupForm.get('forname').valid && signupForm.get('forname').touched"
+                    class="help-block">Please enter a valid forname</span>
                 </div>
                 <div class="form-group">
                     <label for="lastname">Lastname</label>
                     <input type="text" id="lastname" class="form-control"  formControlName="lastname">
+                    <span 
+                    *ngIf="!signupForm.get('lastname').valid && signupForm.get('lastname').touched"
+                    class="help-block">Please enter a valid lastname</span>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" class="form-control" formControlName="email">
+                    <span 
+                    *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"
+                    class="help-block">Please enter a valid email</span>
                 </div>
             </div>
             <div class="radio" *ngFor="let gender of genders">
                 <label>
-                    <input type="radio" [value]="gender" formControlName="gender">
+                    <input type="radio" [value]="gender" formControlName="gender"> 
                     {{gender}}
                 </label>
             </div>
+            <span 
+                    *ngIf="!signupForm.valid && signupForm.touched"
+                    class="help-block">Please enter a valid data</span>
             <button class="btn btn-primary" >Submit</button>
 
         </form>
