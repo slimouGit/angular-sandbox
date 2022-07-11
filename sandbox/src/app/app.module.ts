@@ -22,6 +22,7 @@ import {ShopService} from "./routing/shop/shop.service";
 import {BasketService} from "./routing/basket/basket.service";
 import { ObservableComponent } from './observable/observable.component';
 import { FormComponent } from './form/form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -50,7 +51,8 @@ const appRoutes: Routes = [
     ItemDetailComponent,
     HeaderComponent,
     ObservableComponent,
-    FormComponent
+    FormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
