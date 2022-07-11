@@ -1,15 +1,24 @@
-import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
   templateUrl: './reactive-form.component.html',
   styleUrls: ['./reactive-form.component.css']
 })
-export class ReactiveFormComponent  {
+export class ReactiveFormComponent implements OnInit {
 
+  genders = ['male', 'female'];
+  signupForm: FormGroup;
 
-genders = ['male', 'female'];
+  ngOnInit(): void {
+    this.signupForm = new FormGroup({
+      'forname': new FormControl(null),
+      'lastname': new FormControl(null),
+      'email': new FormControl(null),
+      'gender': new FormControl('male')
+    });
+  }
 
 
 }
