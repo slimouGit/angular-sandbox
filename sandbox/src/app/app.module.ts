@@ -21,6 +21,7 @@ import { HeaderComponent } from './routing/header/header.component';
 import {ShopService} from "./routing/shop/shop.service";
 import {BasketService} from "./routing/basket/basket.service";
 import { ObservableComponent } from './observable/observable.component';
+import { FormComponent } from './form/form.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     ItemDetailComponent,
     HeaderComponent,
-    ObservableComponent
+    ObservableComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
