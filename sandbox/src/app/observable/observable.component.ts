@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { map, Observable, Subscription } from 'rxjs';
+import { filter, map, Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-observable',
@@ -30,7 +30,10 @@ export class ObservableComponent implements OnInit {
 
 
 
-    this.firstObsSubscription = customInternalObservable.pipe(map((data:number) => {
+    this.firstObsSubscription = customInternalObservable.pipe(
+      filter(
+      data => { return data > 0}
+    ),map((data:number) => {
       return 'Round: ' + (data + 1)
     }))
     .subscribe(data => {
