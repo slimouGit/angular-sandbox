@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { map, Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-observable',
@@ -28,7 +28,12 @@ export class ObservableComponent implements OnInit {
       }, 1000);
     });
 
-    this.firstObsSubscription = customInternalObservable.subscribe(data => {
+
+
+    this.firstObsSubscription = customInternalObservable.pipe(map((data:number) => {
+      return 'Round: ' + (data + 1)
+    }))
+    .subscribe(data => {
         console.log(data);
         this.counter = data;
     }, error => {
