@@ -61,4 +61,29 @@ export class ReactiveFormComponent implements OnInit {
     return promise;
   }
 
+  onSetDefaultValues() {
+    this.signupForm.setValue({
+      'userData': {
+        'forname': 'Max',
+        'lastname': "Mustermann"
+      },
+      'email': 'Max@Mustermann.de',
+      'gender': 'male',
+      'hobbies': []
+    });
+  }
+
+  onSetDefaultNames() {
+    this.signupForm.patchValue({
+      'userData': {
+        'forname': 'Maria',
+        'lastname': "Musterfrau"
+      }
+    });
+  }
+
+  onResetForm(){
+    this.signupForm.reset();
+  }
+
 }

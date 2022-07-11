@@ -46,6 +46,9 @@
             </div>
             <span *ngIf="!signupForm.valid && signupForm.touched" class="help-block">Please enter a valid data</span>
             <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-primary" (click)="onSetDefaultValues()">Default Values</button>
+            <button class="btn btn-primary" (click)="onSetDefaultNames()">Default Names</button>
+            <button class="btn btn-primary" (click)="onResetForm()">Reset Form</button>
 
         </form>
     </div>
