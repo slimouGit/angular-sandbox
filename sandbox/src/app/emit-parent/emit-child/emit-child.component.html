@@ -2,3 +2,5 @@
 
 <input type="text" [(ngModel)]="helloToParent">
 <button (click)="greetingParentInFunctionFromChild(helloToParent)">Say hello to your parent</button>
+
+<h3 style="color: red;" *ngIf="haveToGoToBedNow">Child say: "Uuups, have to go to bed now"</h3>
