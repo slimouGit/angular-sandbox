@@ -7,11 +7,15 @@
         <form (ngSubmit)="onSubmit()" #f="ngForm">
             <div class="form-group">
                 <label for="forname">Forname</label>
-                <input type="text" id="forname" class="form-control" ngModel name="forname">
+                <input type="text" id="forname" class="form-control" ngModel name="forname" required>
             </div>
             <div class="form-group">
                 <label for="lastname">Lastname</label>
-                <input type="text" id="lastname" class="form-control" ngModel name="lastname">
+                <input type="text" id="lastname" class="form-control" ngModel name="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" ngModel name="email" required email>
             </div>
             <button class="btn btn-primary">Submit</button>
         </form>
