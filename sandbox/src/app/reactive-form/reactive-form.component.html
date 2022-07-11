@@ -9,7 +9,11 @@
                         <label for="forname">Forname</label>
                         <input type="text" id="forname" class="form-control" formControlName="forname">
                         <span *ngIf="!signupForm.get('userData.forname').valid && signupForm.get('userData.forname').touched"
-                            class="help-block">Please enter a valid forname</span>
+                            class="help-block">
+                            <span *ngIf="signupForm.get('userData.forname').errors['nameIsForbidden']">This name is forbidden</span>
+                            <span *ngIf="signupForm.get('userData.forname').errors['required']">This field is required</span>
+                            
+                        </span>
                     </div>
                     <div class="form-group">
                         <label for="lastname">Lastname</label>
