@@ -39,13 +39,15 @@ export class ObservableComponent implements OnInit {
     .subscribe(data => {
         console.log(data);
         this.counter = data;
-    }, error => {
+    }
+    /**, error => {
         console.log(error);
         alert(error.message);
     }, () => {
       console.log('Completed');
       alert('Completed');
-    })
+    }*/
+    )
   }
 
   unSubscripe(){
