@@ -10,6 +10,7 @@ export class FormComponent implements OnInit {
 
 @ViewChild('f') signUpForm: NgForm;
 answer:string;
+genders = ['male', 'female'];
 
   constructor() { }
 
