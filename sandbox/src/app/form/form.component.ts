@@ -9,8 +9,18 @@ import { NgForm } from '@angular/forms';
 export class FormComponent implements OnInit {
 
 @ViewChild('f') signUpForm: NgForm;
-answer:string;
+comment:string;
 genders = ['male', 'female'];
+
+user = {
+  forname: '',
+  lastname: '',
+  email: '',
+  comment: '',
+  gender: ''
+}
+
+submitted = false;
 
   constructor() { }
 
@@ -24,7 +34,13 @@ genders = ['male', 'female'];
   */
 
   onSubmit(){
+    this.submitted = true;
     console.log(this.signUpForm);
+    this.user.forname = this.signUpForm.value.userData.forname;
+    this.user.lastname = this.signUpForm.value.userData.lastname;
+    this.user.email = this.signUpForm.value.userData.email;
+    this.user.comment = this.signUpForm.value.comment;
+    this.user.gender = this.signUpForm.value.gender;
   }
 
 
@@ -47,5 +63,9 @@ genders = ['male', 'female'];
       }
     });
      
+  }
+
+  resetForm(){
+    this.signUpForm.reset();
   }
 }
