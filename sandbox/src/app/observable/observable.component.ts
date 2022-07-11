@@ -18,6 +18,9 @@ export class ObservableComponent implements OnInit {
       let count = 0;
       setInterval(()=> {
         observer.next(count);
+        if(count === 3){
+          observer.complete();
+        }
         if(count>5){
           observer.error(new Error('Count is greater 5!'));          
         }
@@ -31,6 +34,9 @@ export class ObservableComponent implements OnInit {
     }, error => {
         console.log(error);
         alert(error.message);
+    }, () => {
+      console.log('Completed');
+      alert('Completed');
     })
   }
 
