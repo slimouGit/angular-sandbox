@@ -27,4 +27,25 @@ genders = ['male', 'female'];
     console.log(this.signUpForm);
   }
 
+
+  suggestEmail(){
+    const suggestedEmail = "MaxPower@Force.com";
+    /**
+    this.signUpForm.setValue({
+        userData: {
+          email: suggestedEmail, 
+          forname: '',
+          lastname: '',
+          questionAnswer: '',
+          gender: 'male'
+        }
+    });
+   */
+   this.signUpForm.form.patchValue({
+      userData: {
+        email: suggestedEmail
+      }
+    });
+     
+  }
 }
