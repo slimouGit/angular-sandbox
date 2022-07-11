@@ -5,20 +5,29 @@
 
 
         <form (ngSubmit)="onSubmit()" #f="ngForm">
-            <div class="form-group">
-                <label for="forname">Forname</label>
-                <input type="text" id="forname" class="form-control" ngModel name="forname" required>
+            <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
+                <div class="form-group">
+                    <label for="forname">Forname</label>
+                    <input type="text" id="forname" class="form-control" ngModel name="forname" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Lastname</label>
+                    <input type="text" id="lastname" class="form-control" ngModel name="lastname" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" ngModel name="email" required email
+                        #email="ngModel">
+                    <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email</span>
+                </div>
+                <p *ngIf="!userData.valid && userData.touched">User Dater is invalid</p>
+                <div class="form-group">
+                    <textarea name="questionAnswer" rows="3" class="form-control" [(ngModel)]="answer">
+            </textarea>
+                </div>
+                <p>Your reply: {{answer}}</p>
+                <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
             </div>
-            <div class="form-group">
-                <label for="lastname">Lastname</label>
-                <input type="text" id="lastname" class="form-control" ngModel name="lastname" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" class="form-control" ngModel name="email" required email #email="ngModel">
-                <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email</span>
-            </div>
-            <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
         </form>
 
     </div>
