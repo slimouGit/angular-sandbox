@@ -1,9 +1,11 @@
 import {Item} from "../shop/item/item.model";
-import {EventEmitter} from "@angular/core";
+import { Subject } from "rxjs";
 
 export class BasketService{
+  
   // itemsAdded = new EventEmitter<Item[]>();
   private basketItems = [];
+  basketChanged = new Subject<Item[]>();
 
   addItemToBasket(item:Item){
     this.basketItems.push(item);
@@ -21,5 +23,10 @@ export class BasketService{
       totalCost += itemsInBasket[i].price;
     }
     return +totalCost.toFixed(2);
+  }
+
+  emptyBasket() {
+    this.basketItems = [];
+    this.basketChanged.next(this.basketItems);
   }
 }

@@ -27,6 +27,7 @@ export class BasketComponent implements OnInit {
   }
 
   emptyBasket() {
-    this.itemsInBasket = [];
+    this.basketService.emptyBasket();
+    this.router.navigate(['/shop']);
   }
 }
