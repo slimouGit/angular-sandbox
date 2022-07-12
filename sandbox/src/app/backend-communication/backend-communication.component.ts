@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { Post } from './post.model';
+import { PostService } from './post.service';
 
 @Component({
   selector: 'app-backend-communication',
@@ -10,28 +11,25 @@ import { Post } from './post.model';
 })
 export class BackendCommunicationComponent implements OnInit {
 
-  dbUrl: string;
+  
   loadedPosts:Post[] = [];
   isFetching = false;
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private postService:PostService) { }
 
-  ngOnInit() {
-    this.dbUrl = 'https://ng-sandbox-db-default-rtdb.firebaseio.com/';
-    this.onFetchPosts();
+  ngOnInit() {    
+    this.onGetPosts();
   }
 
   onCreatePost(postData: Post) {
     // Send Http request
     console.log(postData);
-    this.http.post(this.dbUrl + 'posts.json', postData).subscribe(responseData => {
-      console.log(responseData);
-    });
+    this.postService.createAndStorePost(postData.title, postData.content );
+    
   }
 
   onFetchPosts() {
-    // Send Http request
     this.onGetPosts();
   }
 
@@ -42,21 +40,10 @@ export class BackendCommunicationComponent implements OnInit {
 
   onGetPosts() {
     this.isFetching = true;
-    this.http.get<{[key:string]: Post}>(this.dbUrl + 'posts.json')
-      .pipe(map(responseData => {
-        const postArray:Post[] = [];
-        for (const key in responseData) {
-          if (responseData.hasOwnProperty(key)) {
-            postArray.push({ ...responseData[key], id: key })
-          }
-        }
-        return postArray;
-      }))
-      .subscribe(posts => {
-        this.isFetching = false;
-        console.log(posts);
-        this.loadedPosts = posts;
-      });
+    this.postService.fetchPosts().subscribe(posts => {
+      this.isFetching = false;
+      this.loadedPosts = posts;
+    });
   }
 
 }
