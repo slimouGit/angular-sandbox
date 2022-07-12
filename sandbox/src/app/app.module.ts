@@ -23,6 +23,7 @@ import {BasketService} from "./routing/basket/basket.service";
 import { ObservableComponent } from './observable/observable.component';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -52,7 +53,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     ObservableComponent,
     FormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    PipesComponent
   ],
   imports: [
     BrowserModule,
