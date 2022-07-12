@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Post } from './post.model';
 import { PostService } from './post.service';
 
@@ -9,17 +9,21 @@ import { PostService } from './post.service';
   templateUrl: './backend-communication.component.html',
   styleUrls: ['./backend-communication.component.css']
 })
-export class BackendCommunicationComponent implements OnInit {
+export class BackendCommunicationComponent implements OnInit, OnDestroy {
 
 
   loadedPosts: Post[] = [];
   isFetching = false;
   error = null;
+  private errorSub: Subscription;
 
 
   constructor(private postService: PostService) { }
 
   ngOnInit() {
+    this.errorSub = this.postService.error.subscribe(errorMessage => {
+      this.error = errorMessage;
+    })
     this.onGetPosts();
   }
 
@@ -49,6 +53,10 @@ export class BackendCommunicationComponent implements OnInit {
     }, error => {
       this.error = error.message;
     });
+  }
+
+  ngOnDestroy(): void {
+    this.errorSub.unsubscribe();
   }
 
 }
