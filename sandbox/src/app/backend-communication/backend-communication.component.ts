@@ -12,6 +12,8 @@ export class BackendCommunicationComponent implements OnInit {
 
   dbUrl: string;
   loadedPosts:Post[] = [];
+  isFetching = false;
+
 
   constructor(private http: HttpClient) { }
 
@@ -39,6 +41,7 @@ export class BackendCommunicationComponent implements OnInit {
   }
 
   onGetPosts() {
+    this.isFetching = true;
     this.http.get<{[key:string]: Post}>(this.dbUrl + 'posts.json')
       .pipe(map(responseData => {
         const postArray:Post[] = [];
@@ -50,6 +53,7 @@ export class BackendCommunicationComponent implements OnInit {
         return postArray;
       }))
       .subscribe(posts => {
+        this.isFetching = false;
         console.log(posts);
         this.loadedPosts = posts;
       });
