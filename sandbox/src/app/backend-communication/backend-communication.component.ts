@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
+import { Post } from './post.model';
 
 @Component({
   selector: 'app-backend-communication',
@@ -19,7 +20,7 @@ export class BackendCommunicationComponent implements OnInit {
     this.onFetchPosts();
   }
 
-  onCreatePost(postData: { title: string; content: string }) {
+  onCreatePost(postData: Post) {
     // Send Http request
     console.log(postData);
     this.http.post(this.dbUrl + 'posts.json', postData).subscribe(responseData => {
@@ -38,9 +39,9 @@ export class BackendCommunicationComponent implements OnInit {
   }
 
   onGetPosts() {
-    this.http.get(this.dbUrl + 'posts.json')
+    this.http.get<{[key:string]: Post}>(this.dbUrl + 'posts.json')
       .pipe(map(responseData => {
-        const postArray = [];
+        const postArray:Post[] = [];
         for (const key in responseData) {
           if (responseData.hasOwnProperty(key)) {
             postArray.push({ ...responseData[key], id: key })
@@ -48,7 +49,9 @@ export class BackendCommunicationComponent implements OnInit {
         }
         return postArray;
       }))
-      .subscribe(posts => console.log(posts));
+      .subscribe(posts => {
+        console.log(posts)
+      });
   }
 
 }
