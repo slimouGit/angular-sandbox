@@ -11,22 +11,22 @@ import { PostService } from './post.service';
 })
 export class BackendCommunicationComponent implements OnInit {
 
-  
-  loadedPosts:Post[] = [];
+
+  loadedPosts: Post[] = [];
   isFetching = false;
 
 
-  constructor(private postService:PostService) { }
+  constructor(private postService: PostService) { }
 
-  ngOnInit() {    
+  ngOnInit() {
     this.onGetPosts();
   }
 
   onCreatePost(postData: Post) {
     // Send Http request
     console.log(postData);
-    this.postService.createAndStorePost(postData.title, postData.content );
-    
+    this.postService.createAndStorePost(postData.title, postData.content);
+
   }
 
   onFetchPosts() {
@@ -34,7 +34,9 @@ export class BackendCommunicationComponent implements OnInit {
   }
 
   onClearPosts() {
-    // Send Http request
+    this.postService.onDeletePosts().subscribe(() => {
+      this.loadedPosts = [];
+    });
 
   }
 

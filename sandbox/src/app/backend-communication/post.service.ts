@@ -16,6 +16,7 @@ export class PostService{
         const postData: Post = { title: title, content:content };
         this.http.post(this.dbUrl + 'posts.json', postData).subscribe(responseData => {
             console.log(responseData);
+            
           });
     }
 
@@ -30,5 +31,9 @@ export class PostService{
         }
         return postArray;
       }));
+    }
+    
+    onDeletePosts(){
+        return this.http.delete(this.dbUrl + 'posts.json');
     }
 }
