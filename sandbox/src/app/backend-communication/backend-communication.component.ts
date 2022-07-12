@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-backend-communication',
@@ -8,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BackendCommunicationComponent implements OnInit {
 
-  dbUrl:string;
+  dbUrl: string;
   loadedPosts = [];
- 
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.dbUrl = 'https://ng-sandbox-db-default-rtdb.firebaseio.com/';
@@ -21,7 +22,7 @@ export class BackendCommunicationComponent implements OnInit {
   onCreatePost(postData: { title: string; content: string }) {
     // Send Http request
     console.log(postData);
-    this.http.post(this.dbUrl+'posts.json', postData).subscribe(responseData => {
+    this.http.post(this.dbUrl + 'posts.json', postData).subscribe(responseData => {
       console.log(responseData);
     });
   }
@@ -36,8 +37,18 @@ export class BackendCommunicationComponent implements OnInit {
 
   }
 
-  onGetPosts(){
-    this.http.get(this.dbUrl+'posts.json').subscribe(posts => console.log(posts));
+  onGetPosts() {
+    this.http.get(this.dbUrl + 'posts.json')
+      .pipe(map(responseData => {
+        const postArray = [];
+        for (const key in responseData) {
+          if (responseData.hasOwnProperty(key)) {
+            postArray.push({ ...responseData[key], id: key })
+          }
+        }
+        return postArray;
+      }))
+      .subscribe(posts => console.log(posts));
   }
 
 }
