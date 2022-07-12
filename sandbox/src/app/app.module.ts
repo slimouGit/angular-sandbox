@@ -26,6 +26,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { BackendCommunicationComponent } from './backend-communication/backend-communication.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -58,13 +60,15 @@ const appRoutes: Routes = [
     ReactiveFormComponent,
     PipesComponent,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    BackendCommunicationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [ShopService, BasketService],
   bootstrap: [AppComponent]
