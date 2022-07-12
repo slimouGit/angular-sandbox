@@ -12,6 +12,7 @@ export class PipesComponent implements OnInit {
       resolve('stable');
     }, 2000);
   });
+  statusNewServer:string = 'offline';
   servers = [
     {
       instanceType: 'medium',
@@ -48,7 +49,7 @@ export class PipesComponent implements OnInit {
     this.servers.push({
       instanceType: 'small',
       name: 'New Server',
-      status: 'stable',
+      status: this.statusNewServer,
       started: new Date(15, 1, 2017)
     });
   }
