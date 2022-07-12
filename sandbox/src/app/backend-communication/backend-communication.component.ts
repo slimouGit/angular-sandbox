@@ -14,6 +14,7 @@ export class BackendCommunicationComponent implements OnInit {
 
   loadedPosts: Post[] = [];
   isFetching = false;
+  error = null;
 
 
   constructor(private postService: PostService) { }
@@ -45,6 +46,8 @@ export class BackendCommunicationComponent implements OnInit {
     this.postService.fetchPosts().subscribe(posts => {
       this.isFetching = false;
       this.loadedPosts = posts;
+    }, error => {
+      this.error = error.message;
     });
   }
 
