@@ -11,7 +11,7 @@ import { Post } from './post.model';
 export class BackendCommunicationComponent implements OnInit {
 
   dbUrl: string;
-  loadedPosts = [];
+  loadedPosts:Post[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -50,7 +50,8 @@ export class BackendCommunicationComponent implements OnInit {
         return postArray;
       }))
       .subscribe(posts => {
-        console.log(posts)
+        console.log(posts);
+        this.loadedPosts = posts;
       });
   }
 
