@@ -55,6 +55,10 @@ export class BackendCommunicationComponent implements OnInit, OnDestroy {
     });
   }
 
+  onSelectPost(index:number){
+    console.log("Post selected ", this.loadedPosts[index]);
+  }
+
   ngOnDestroy(): void {
     this.errorSub.unsubscribe();
   }
