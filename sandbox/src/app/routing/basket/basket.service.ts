@@ -8,15 +8,15 @@ export class BasketService{
   private basketItems = [];
   basketChanged = new Subject<Item[]>();
 
-
-
   addItemToBasket(item:Item){
     this.basketItems.push(item);
+    this.basketChanged.next(this.basketItems);
     // this.itemsAdded.emit(this.basketItems.slice());
     console.log("items in basket", this.basketItems);
   }
 
   getItemsInBasket() {
+
     return this.basketItems.slice();
   }
 
