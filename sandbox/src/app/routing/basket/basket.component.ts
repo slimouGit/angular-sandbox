@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Item} from "../shop/item/item.model";
 import {BasketService} from "./basket.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Subscription} from "rxjs";
 
 
 @Component({
@@ -13,7 +12,6 @@ import {Subscription} from "rxjs";
 export class BasketComponent implements OnInit {
   itemsInBasket:Item[];
   totalCost:number;
-  subscription:Subscription;
 
   constructor(private route: ActivatedRoute, private router: Router, private basketService: BasketService) { }
 
@@ -24,7 +22,6 @@ export class BasketComponent implements OnInit {
   emptyBasket() {
     this.basketService.emptyBasket();
     this.initializeBasket();
-    // this.router.navigate(['/shop']);
   }
 
   deleteItem(index:number){
