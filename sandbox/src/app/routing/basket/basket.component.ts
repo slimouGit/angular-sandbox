@@ -16,18 +16,30 @@ export class BasketComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private basketService: BasketService) { }
 
   ngOnInit(): void {
-    this.itemsInBasket = this.basketService.getItemsInBasket();
-    // this.basketService.itemsAdded.subscribe(
-    //   (basketItems:Item[]) => {
-    //     this.itemsInBasket = basketItems;
-    //   }
-    // );
-    console.log("this.itemsInBasket", this.itemsInBasket);
-    this.totalCost = this.basketService.getTotalCost(this.itemsInBasket);
+    this.initializeBasket();
   }
 
   emptyBasket() {
     this.basketService.emptyBasket();
-    this.router.navigate(['/shop']);
+    this.initializeBasket();
+    // this.router.navigate(['/shop']);
+  }
+
+  deleteItem(index:number){
+    this.basketService.deleteItem(index);
+    this.initializeBasket();
+  }
+
+  private loadItems() {
+    this.itemsInBasket = this.basketService.getItemsInBasket();
+  }
+
+  private calculateTotalCosts() {
+    this.totalCost = this.basketService.getTotalCost(this.itemsInBasket);
+  }
+
+  private initializeBasket() {
+    this.loadItems();
+    this.calculateTotalCosts();
   }
 }

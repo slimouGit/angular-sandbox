@@ -5,7 +5,7 @@
 </div>
 <ul>
   <li *ngFor="let basketItem of itemsInBasket; index as i;">
-    {{i + 1}} - {{basketItem.name}} - {{basketItem.price}} €
+    {{i + 1}} - {{basketItem.name}} - {{basketItem.price}} € <a (click)="deleteItem(i)">delete</a> )
   </li>
 </ul>
 <h2>Total: {{totalCost}} €</h2>

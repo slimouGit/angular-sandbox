@@ -1,11 +1,14 @@
 import {Item} from "../shop/item/item.model";
 import { Subject } from "rxjs";
+import {Router} from "@angular/router";
 
 export class BasketService{
-  
+
   // itemsAdded = new EventEmitter<Item[]>();
   private basketItems = [];
   basketChanged = new Subject<Item[]>();
+
+
 
   addItemToBasket(item:Item){
     this.basketItems.push(item);
@@ -27,6 +30,11 @@ export class BasketService{
 
   emptyBasket() {
     this.basketItems = [];
+    this.basketChanged.next(this.basketItems);
+  }
+
+  deleteItem(index: number) {
+    this.basketItems.splice(index,1);
     this.basketChanged.next(this.basketItems);
   }
 }
