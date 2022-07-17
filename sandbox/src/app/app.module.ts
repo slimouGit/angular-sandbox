@@ -29,6 +29,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { BackendCommunicationComponent } from './backend-communication/backend-communication.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BasketCounterComponent } from './routing/basket/basket-counter/basket-counter.component';
+import { WrapperComponent } from './wrapper/wrapper.component';
+import { ChildComponent } from './wrapper/child/child.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -63,7 +65,9 @@ const appRoutes: Routes = [
     ShortenPipe,
     FilterPipe,
     BackendCommunicationComponent,
-    BasketCounterComponent
+    BasketCounterComponent,
+    WrapperComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
