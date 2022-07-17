@@ -31,16 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BasketCounterComponent } from './routing/basket/basket-counter/basket-counter.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { ChildComponent } from './wrapper/child/child.component';
-
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'shop', component: ShopComponent},
-  {path: 'basket', component: BasketComponent},
-  {path: 'basket/:id/add', component: BasketComponent},
-  {path: 'view/:id', component: ItemDetailComponent},
-  {path: 'not-found', component: PageNotFoundComponent},
-  {path: '**', redirectTo: '/not-found'}
-];
+import {RoutingModule} from "./routing/routing.module";
 
 @NgModule({
   declarations: [
@@ -70,9 +61,9 @@ const appRoutes: Routes = [
     ChildComponent
   ],
   imports: [
+    RoutingModule,
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
     HttpClientModule
   ],
