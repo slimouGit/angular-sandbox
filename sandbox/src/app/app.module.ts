@@ -30,7 +30,7 @@ import { BackendCommunicationComponent } from './backend-communication/backend-c
 import { HttpClientModule } from '@angular/common/http';
 import { BasketCounterComponent } from './routing/basket/basket-counter/basket-counter.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
-import { ChildComponent } from './wrapper/child/child.component';
+import { PictureComponent } from './wrapper/picture-component/picture.component';
 import {RoutingModule} from "./routing/routing.module";
 
 @NgModule({
@@ -58,7 +58,7 @@ import {RoutingModule} from "./routing/routing.module";
     BackendCommunicationComponent,
     BasketCounterComponent,
     WrapperComponent,
-    ChildComponent
+    PictureComponent
   ],
   imports: [
     RoutingModule,
