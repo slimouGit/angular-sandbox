@@ -7,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class PictureComponent implements OnInit {
 
+  @Input() showCurrentDate:boolean = false;
   @Input() showMessage:boolean = false;
   @Input() message:string;
   @Input() imgTitle:string;
@@ -16,10 +17,12 @@ export class PictureComponent implements OnInit {
   @Input() titleTag:string;
   @Input() altTag:string;
 
+  currentDate:Date;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.currentDate = new Date()
   }
 
 }
