@@ -12,6 +12,7 @@ export class ReactiveFormComponent implements OnInit {
   genders = ['male', 'female'];
   signupForm: FormGroup;
   forbiddenFornames = ['Michaela', 'Salim'];
+  submitted = false;
 
 
   ngOnInit(): void {
@@ -29,6 +30,8 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   onSubmit() {
+    
+    this.signupForm.markAllAsTouched();
     console.log(this.signupForm);
   }
 
@@ -84,6 +87,10 @@ export class ReactiveFormComponent implements OnInit {
 
   onResetForm(){
     this.signupForm.reset();
+  }
+
+  onFocus(){
+this.signupForm.controls.email.markAsPending();
   }
 
 }
