@@ -1,0 +1,3 @@
+<input [(ngModel)]="inputValue" (keyup)="checkForm()">
+<button [disabled]="!formIsValid">Submit</button>
+<p>Form is valid: {{formIsValid}}</p>

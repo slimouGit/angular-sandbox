@@ -32,6 +32,10 @@ import { BasketCounterComponent } from './routing/basket/basket-counter/basket-c
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { PictureComponent } from './wrapper/picture-component/picture.component';
 import {RoutingModule} from "./routing/routing.module";
+import { BehaviorsubmitComponent } from './behaviorsubmit/behaviorsubmit.component';
+import { LittleInputComponent } from './behaviorsubmit/little-input/little-input.component';
+import { InputComponentComponent } from './behaviorsubmit/input-component/input-component.component';
+import { InputServiceComponent } from './behaviorsubmit/input-service/input-service.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +62,10 @@ import {RoutingModule} from "./routing/routing.module";
     BackendCommunicationComponent,
     BasketCounterComponent,
     WrapperComponent,
-    PictureComponent
+    PictureComponent,
+    BehaviorsubmitComponent,
+    LittleInputComponent,
+    InputComponentComponent
   ],
   imports: [
     RoutingModule,
