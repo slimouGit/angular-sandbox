@@ -36,6 +36,8 @@ import { BehaviorsubmitComponent } from './behaviorsubmit/behaviorsubmit.compone
 import { LittleInputComponent } from './behaviorsubmit/little-input/little-input.component';
 import { InputComponentComponent } from './behaviorsubmit/input-component/input-component.component';
 import { InputServiceComponent } from './behaviorsubmit/input-service/input-service.component';
+import { UnitTestComponent } from './unit-test/unit-test.component';
+import {ReversePipe} from "./unit-test/shared/reverse.pipe";
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { InputServiceComponent } from './behaviorsubmit/input-service/input-serv
     PictureComponent,
     BehaviorsubmitComponent,
     LittleInputComponent,
-    InputComponentComponent
+    InputComponentComponent,
+    UnitTestComponent,
+    ReversePipe
   ],
   imports: [
     RoutingModule,

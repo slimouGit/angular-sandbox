@@ -1,6 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import { PropertyBindingComponent } from './property-binding.component';
+import {AppComponent} from "../app.component";
 
 describe('PropertyBindingComponent', () => {
   let component: PropertyBindingComponent;
@@ -20,4 +21,6 @@ describe('PropertyBindingComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
 });
