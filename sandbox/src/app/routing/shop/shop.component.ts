@@ -28,7 +28,8 @@ export class ShopComponent implements OnInit {
     console.log("Selected item", id);
     this.id = id;
     console.log("this id", this.id);
-    this.router.navigate(['view',this.id]);
+    const url = `/view/${this.id}`;
+    this.router.navigateByUrl(url);
   }
 
   onAddToBasket(item:Item) {
