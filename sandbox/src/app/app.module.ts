@@ -39,6 +39,8 @@ import { InputServiceComponent } from './behaviorsubmit/input-service/input-serv
 import { UnitTestComponent } from './unit-test/unit-test.component';
 import {ReversePipe} from "./unit-test/shared/reverse.pipe";
 import { ModalComponent } from './modal/modal.component';
+import { SenderComponent } from './dialog/sender/sender.component';
+import { RecieverComponent } from './dialog/reciever/reciever.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +73,9 @@ import { ModalComponent } from './modal/modal.component';
     InputComponentComponent,
     UnitTestComponent,
     ReversePipe,
-    ModalComponent
+    ModalComponent,
+    SenderComponent,
+    RecieverComponent
   ],
   imports: [
     RoutingModule,
