@@ -22,6 +22,5 @@ export class RecieverComponent implements OnInit {
 
   private recieveMessage(chapter) {
     this.chapter = chapter;
-    alert(chapter.chapter + " " + chapter.group);
   }
 }

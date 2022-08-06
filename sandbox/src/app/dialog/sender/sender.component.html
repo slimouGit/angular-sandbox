@@ -1,2 +1,4 @@
-<p>sender works!</p>
-<button (click)="subjectReviever()">subjectReviever</button>
+<h3>sender works!</h3>
+<input type="text" [(ngModel)]="group" placeholder="Group">
+<input type="text" [(ngModel)]="chapter" placeholder="Chapter">
+<button *ngIf="chapter && group" (click)="subjectReviever()">subjectReviever</button>

@@ -13,11 +13,14 @@ export class SenderComponent implements OnInit {
 
   constructor(private senderService:SenderService) { }
 
+  chapter:number;
+  group:number;
+
   ngOnInit(): void {
   }
 
   subjectReviever() {
-    let target: Chapter = {group:42, chapter:0};
+    let target: Chapter = {group:this.group, chapter:this.chapter};
     this.senderService.helloEmitter.next(target);
   }
 }
