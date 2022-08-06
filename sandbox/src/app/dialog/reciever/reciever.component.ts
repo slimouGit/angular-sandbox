@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Subscription} from "rxjs";
 import {SenderService} from "../sender/sender.service";
+import {Chapter} from "../shared/Chapter";
 
 @Component({
   selector: 'app-reciever',
@@ -8,21 +9,19 @@ import {SenderService} from "../sender/sender.service";
   styleUrls: ['./reciever.component.css']
 })
 export class RecieverComponent implements OnInit {
-
-  private target;
-  private helloSub: Subscription;
-
-  constructor(private senderService:SenderService) { }
+  chapter:Chapter;
+  constructor(private senderService: SenderService) {
+  }
 
   ngOnInit(): void {
-    this.helloSub = this.senderService.helloEmitter.subscribe(obj => {
-      this.target = obj;
-      this.recieveMessage(this.target);
+    this.senderService.helloEmitter.subscribe(chapter => {
+      this.recieveMessage(chapter);
       ;
     });
   }
 
-  private recieveMessage(target) {
-    alert(target.chapter + " " + target.group);
+  private recieveMessage(chapter) {
+    this.chapter = chapter;
+    alert(chapter.chapter + " " + chapter.group);
   }
 }
