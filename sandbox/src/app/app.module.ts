@@ -41,6 +41,7 @@ import {ReversePipe} from "./unit-test/shared/reverse.pipe";
 import { ModalComponent } from './modal/modal.component';
 import { SenderComponent } from './dialog/sender/sender.component';
 import { RecieverComponent } from './dialog/reciever/reciever.component';
+import { ChapterTestComponent } from './chapter-test/chapter-test.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { RecieverComponent } from './dialog/reciever/reciever.component';
     ReversePipe,
     ModalComponent,
     SenderComponent,
-    RecieverComponent
+    RecieverComponent,
+    ChapterTestComponent
   ],
   imports: [
     RoutingModule,
