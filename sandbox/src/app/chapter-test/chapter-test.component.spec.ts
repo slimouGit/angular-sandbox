@@ -31,4 +31,15 @@ describe('ChapterTestComponent', () => {
     expect(firstChapter.status).toEqual(Status.INVALID);
     console.log("firstChapter ", firstChapter);
   });
+
+  it('it should not find any result as required and invalid chapter', () => {
+    const chapters: Chapter[]= [
+      {name: 'Chapter 1', required: false, status: Status.VALID},
+      {name: 'Chapter 2', required: false, status: Status.INVALID},
+      {name: 'Chapter 3', required: false, status: Status.INVALID},
+    ];
+    let result = component.findFirstChapterThatIsRequiredAndInvalid(chapters);
+    expect(result).toEqual(undefined);
+    console.log("undefined ", result);
+  });
 });
