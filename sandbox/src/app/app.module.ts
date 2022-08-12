@@ -42,6 +42,7 @@ import { ModalComponent } from './modal/modal.component';
 import { SenderComponent } from './dialog/sender/sender.component';
 import { RecieverComponent } from './dialog/reciever/reciever.component';
 import { ChapterTestComponent } from './chapter-test/chapter-test.component';
+import { PromiseComponent } from './promise/promise.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { ChapterTestComponent } from './chapter-test/chapter-test.component';
     ModalComponent,
     SenderComponent,
     RecieverComponent,
-    ChapterTestComponent
+    ChapterTestComponent,
+    PromiseComponent
   ],
   imports: [
     RoutingModule,
