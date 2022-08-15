@@ -4,10 +4,13 @@
   <li *ngFor="let item of items"><b>{{item.name}}</b>
     <a (click)="onSelectItem(item.id)"> detailview </a>
     |
-<!--    <a [routerLink]="['/basket']"> go to basket </a>-->
+    <!--    <a [routerLink]="['/basket']"> go to basket </a>-->
     <a (click)="onAddToBasket(item)"> add to basket</a>
   </li>
 </ul>
 
 <app-basket-counter></app-basket-counter>
+
+<input [(ngModel)]="itemNumber" type="number">
+<button (click)="showItem()">Show Item</button>
 
