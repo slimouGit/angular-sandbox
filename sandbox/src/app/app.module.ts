@@ -14,35 +14,34 @@ import {RoutingComponent} from './routing/routing.component';
 import {BasketComponent} from './routing/basket/basket.component';
 import {HomeComponent} from './routing/home/home.component';
 import {ShopComponent} from './routing/shop/shop.component';
-import {Route, RouterModule, Routes} from '@angular/router';
 import {PageNotFoundComponent} from './routing/page-not-found/page-not-found.component';
 import {ItemDetailComponent} from './routing/shop/item-detail/item-detail.component';
-import { HeaderComponent } from './routing/header/header.component';
+import {HeaderComponent} from './routing/header/header.component';
 import {ShopService} from "./routing/shop/shop.service";
 import {BasketService} from "./routing/basket/basket.service";
-import { ObservableComponent } from './observable/observable.component';
-import { FormComponent } from './form/form.component';
-import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-import { PipesComponent } from './pipes/pipes.component';
-import { ShortenPipe } from './pipes/shorten.pipe';
-import { FilterPipe } from './pipes/filter.pipe';
-import { BackendCommunicationComponent } from './backend-communication/backend-communication.component';
-import { HttpClientModule } from '@angular/common/http';
-import { BasketCounterComponent } from './routing/basket/basket-counter/basket-counter.component';
-import { WrapperComponent } from './wrapper/wrapper.component';
-import { PictureComponent } from './wrapper/picture-component/picture.component';
+import {ObservableComponent} from './observable/observable.component';
+import {FormComponent} from './form/form.component';
+import {ReactiveFormComponent} from './reactive-form/reactive-form.component';
+import {PipesComponent} from './pipes/pipes.component';
+import {ShortenPipe} from './pipes/shorten.pipe';
+import {FilterPipe} from './pipes/filter.pipe';
+import {BackendCommunicationComponent} from './backend-communication/backend-communication.component';
+import {HttpClientModule} from '@angular/common/http';
+import {BasketCounterComponent} from './routing/basket/basket-counter/basket-counter.component';
+import {WrapperComponent} from './wrapper/wrapper.component';
+import {PictureComponent} from './wrapper/picture-component/picture.component';
 import {RoutingModule} from "./routing/routing.module";
-import { BehaviorsubmitComponent } from './behaviorsubmit/behaviorsubmit.component';
-import { LittleInputComponent } from './behaviorsubmit/little-input/little-input.component';
-import { InputComponentComponent } from './behaviorsubmit/input-component/input-component.component';
-import { InputServiceComponent } from './behaviorsubmit/input-service/input-service.component';
-import { UnitTestComponent } from './unit-test/unit-test.component';
+import {BehaviorsubmitComponent} from './behaviorsubmit/behaviorsubmit.component';
+import {LittleInputComponent} from './behaviorsubmit/little-input/little-input.component';
+import {InputComponentComponent} from './behaviorsubmit/input-component/input-component.component';
+import {UnitTestComponent} from './unit-test/unit-test.component';
 import {ReversePipe} from "./unit-test/shared/reverse.pipe";
-import { ModalComponent } from './modal/modal.component';
-import { SenderComponent } from './dialog/sender/sender.component';
-import { RecieverComponent } from './dialog/reciever/reciever.component';
-import { ChapterTestComponent } from './chapter-test/chapter-test.component';
-import { PromiseComponent } from './promise/promise.component';
+import {ModalComponent} from './modal/modal.component';
+import {SenderComponent} from './dialog/sender/sender.component';
+import {RecieverComponent} from './dialog/reciever/reciever.component';
+import {ChapterTestComponent} from './chapter-test/chapter-test.component';
+import {PromiseComponent} from './promise/promise.component';
+import {InputValidationComponent} from './input-validation/input-validation.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +78,8 @@ import { PromiseComponent } from './promise/promise.component';
     SenderComponent,
     RecieverComponent,
     ChapterTestComponent,
-    PromiseComponent
+    PromiseComponent,
+    InputValidationComponent
   ],
   imports: [
     RoutingModule,
