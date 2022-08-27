@@ -11,7 +11,7 @@ export class ValidatorService {
     if (id.includes('name')) {
       this.valid = value.length > 2;
       if (!this.valid) {
-        this.error = "Error";
+        this.error = "Error in name";
       }
     }
     return {error: this.error, valid: this.valid};
