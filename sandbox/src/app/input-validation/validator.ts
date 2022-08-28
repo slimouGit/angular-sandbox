@@ -1,4 +1,5 @@
 import {Injectable} from "@angular/core";
+import {ValidatorObject} from "./validatorInterface";
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +8,9 @@ export class ValidatorService {
   valid: boolean;
   error: string;
 
-  validateInput(value: string, id: string) {
-    if (id.includes('name')) {
-      this.valid = value.length > 2;
+  validateInput(input: any): ValidatorObject {
+    if (input.id.includes('name')) {
+      this.valid = input.value.length > 2;
       if (!this.valid) {
         this.error = "Error in name";
       }

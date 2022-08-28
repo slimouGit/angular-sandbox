@@ -20,7 +20,7 @@ export class InputValidationComponent {
   validateInput() {
     this.valid = true;
     this.error = "Success";
-    let valdator: ValidatorObject = this.validatorService.validateInput(this.name, this.nameInput.nativeElement.id);
+    let valdator: ValidatorObject = this.validatorService.validateInput(this.nameInput.nativeElement);
     if (!valdator.valid) {
       this.valid = valdator.valid;
       this.error = valdator.error;
