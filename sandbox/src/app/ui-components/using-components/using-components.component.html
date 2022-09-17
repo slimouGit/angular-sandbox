@@ -1,5 +1,6 @@
 <p>using-components works!</p>
 <text [headline]="true" [text]="headline"></text>
 <text [headline]="false" [text]="text"></text>
-<input-field input="lastname" label="Name"></input-field>
-<input-field input="forname" label="Vorname"></input-field>
+<input-field inputIdentifier="lastname" label="Name"></input-field>
+<input-field inputIdentifier="forname" label="Vorname"></input-field>
+<input-field [inputIdentifier]="inputIdentifierFromUsingComponent" [label]="labelFromUsingComponent"></input-field>

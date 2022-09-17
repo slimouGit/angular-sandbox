@@ -7,7 +7,7 @@ import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 })
 export class InputFieldComponent {
 
-  @Input() input: string;
+  @Input() inputIdentifier: string;
   @Input() label: string;
   value: string;
   error: string;
