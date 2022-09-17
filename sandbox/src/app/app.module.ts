@@ -42,6 +42,8 @@ import {RecieverComponent} from './dialog/reciever/reciever.component';
 import {ChapterTestComponent} from './chapter-test/chapter-test.component';
 import {PromiseComponent} from './promise/promise.component';
 import {InputValidationComponent} from './input-validation/input-validation.component';
+import { TextComponent } from './ui-components/text/text.component';
+import { UsingComponentsComponent } from './ui-components/using-components/using-components.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +81,9 @@ import {InputValidationComponent} from './input-validation/input-validation.comp
     RecieverComponent,
     ChapterTestComponent,
     PromiseComponent,
-    InputValidationComponent
+    InputValidationComponent,
+    TextComponent,
+    UsingComponentsComponent
   ],
   imports: [
     RoutingModule,
