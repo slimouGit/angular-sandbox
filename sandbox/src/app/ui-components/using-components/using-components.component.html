@@ -1,6 +1,13 @@
 <p>using-components works!</p>
-<text [headline]="true" [text]="headline"></text>
-<text [headline]="false" [text]="text"></text>
-<input-field inputIdentifier="lastname" label="Name"></input-field>
-<input-field inputIdentifier="forname" label="Vorname"></input-field>
-<input-field [inputIdentifier]="inputIdentifierFromUsingComponent" [label]="labelFromUsingComponent"></input-field>
+<div style="margin-left: 20px;">
+  <text [headline]="true" [text]="headline"></text>
+  <text [headline]="false" [text]="text"></text>
+  <input-field inputIdentifier="lastname" label="Name"></input-field>
+  <input-field inputIdentifier="forname" label="Vorname"></input-field>
+  <input-field [inputIdentifier]="inputIdentifierFromUsingComponent" [label]="labelFromUsingComponent"></input-field>
+
+  <text [headline]="true" text="Input Loop:"></text>
+  <ng-container *ngFor="let inputField of inputFields;">
+    <input-field [inputIdentifier]="inputField.inputIdentifier" [label]="inputField.label"></input-field>
+  </ng-container>
+</div>
