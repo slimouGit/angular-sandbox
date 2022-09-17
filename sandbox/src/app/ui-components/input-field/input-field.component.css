@@ -8,5 +8,10 @@ span {
 
 .error {
   color: #ff0000;
-  size: 0.8em;
+  font-size: 0.8em;
+}
+
+.success {
+  color: green;
+  font-size: 0.8em;
 }

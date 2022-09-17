@@ -20,6 +20,7 @@ export class InputFieldComponent {
     if (currentValue.length >= 3) {
       this.value = currentValue;
     } else {
+      this.value = null;
       this.error = "Eingabe muss mindestens 3 Zeichen enthalten";
     }
   }
