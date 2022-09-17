@@ -1,19 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-using-components',
   templateUrl: './using-components.component.html',
   styleUrls: ['./using-components.component.css']
 })
-export class UsingComponentsComponent implements OnInit {
+export class UsingComponentsComponent {
 
   text: string;
+  headline: string;
 
   constructor() {
     this.text = 'hello text component';
-  }
-
-  ngOnInit(): void {
+    this.headline = 'I am a Headline';
   }
 
 }
