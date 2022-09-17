@@ -44,6 +44,7 @@ import {PromiseComponent} from './promise/promise.component';
 import {InputValidationComponent} from './input-validation/input-validation.component';
 import { TextComponent } from './ui-components/text/text.component';
 import { UsingComponentsComponent } from './ui-components/using-components/using-components.component';
+import { InputFieldComponent } from './ui-components/input-field/input-field.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { UsingComponentsComponent } from './ui-components/using-components/using
     PromiseComponent,
     InputValidationComponent,
     TextComponent,
-    UsingComponentsComponent
+    UsingComponentsComponent,
+    InputFieldComponent
   ],
   imports: [
     RoutingModule,
