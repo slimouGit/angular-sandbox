@@ -12,13 +12,13 @@ export class InputFieldComponent {
   value: string;
   error: string;
 
-  @ViewChild('nameInput') nameInput: ElementRef;
+  @ViewChild('inputField') inputField: ElementRef;
 
   callFunction() {
     this.error = null;
-    const currentValue = this.nameInput.nativeElement.value;
+    const currentValue = this.inputField.nativeElement.value;
     if (currentValue.length >= 3) {
-      this.value = this.nameInput.nativeElement.value;
+      this.value = currentValue;
     } else {
       this.error = "Eingabe muss mindestens 3 Zeichen enthalten";
     }

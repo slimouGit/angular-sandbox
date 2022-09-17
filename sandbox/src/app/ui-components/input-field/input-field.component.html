@@ -1,6 +1,6 @@
 <div>
   <label for="{{input}}-id">{{label}}:</label>
-  <input #nameInput (blur)="callFunction()" id="{{input}}-id" type="text"> <span *ngIf="value">{{value}}</span>
+  <input #inputField (blur)="callFunction()" id="{{input}}-id" type="text"> <span *ngIf="value">{{value}}</span>
   <div>
     <span *ngIf="error" class="error">{{error}}</span>
   </div>
