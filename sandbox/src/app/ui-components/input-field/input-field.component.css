@@ -5,3 +5,8 @@ label {
 span {
   margin-left: 20px;
 }
+
+.error {
+  color: #ff0000;
+  size: 0.8em;
+}
