@@ -9,19 +9,20 @@ export class InputFieldComponent {
 
   @Input() inputIdentifier: string;
   @Input() label: string;
+  @Input() error: string;
   value: string;
-  error: string;
+  invalid: boolean;
 
   @ViewChild('inputField') inputField: ElementRef;
 
-  callFunction() {
-    this.error = null;
+  validateInput() {
+    this.invalid = false;
     const currentValue = this.inputField.nativeElement.value;
     if (currentValue.length >= 3) {
       this.value = currentValue;
     } else {
+      this.invalid = true;
       this.value = null;
-      this.error = "Eingabe muss mindestens 3 Zeichen enthalten";
     }
   }
 }

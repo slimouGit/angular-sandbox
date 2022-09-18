@@ -8,6 +8,7 @@
 
   <text [headline]="true" text="Input Loop:"></text>
   <ng-container *ngFor="let inputField of inputFields;">
-    <input-field [inputIdentifier]="inputField.inputIdentifier" [label]="inputField.label"></input-field>
+    <input-field [error]="inputField.error" [inputIdentifier]="inputField.inputIdentifier"
+                 [label]="inputField.label"></input-field>
   </ng-container>
 </div>

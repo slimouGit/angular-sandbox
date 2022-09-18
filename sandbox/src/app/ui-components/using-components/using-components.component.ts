@@ -23,9 +23,9 @@ export class UsingComponentsComponent {
     this.inputIdentifierFromUsingComponent = "dinamic identifier"
     this.labelFromUsingComponent = "dinamic label"
     this.inputFields = [
-      {inputIdentifier: 'phone', label: 'Phone'},
-      {inputIdentifier: 'email', label: 'Email'},
-      {inputIdentifier: 'street', label: 'Street'},
+      {inputIdentifier: 'phone', label: 'Phone', error: 'Enter valid phone number'},
+      {inputIdentifier: 'email', label: 'Email', error: 'Enter valid email'},
+      {inputIdentifier: 'street', label: 'Street', error: 'Enter valid street'},
     ];
   }
 
