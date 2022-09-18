@@ -23,9 +23,14 @@ export class UsingComponentsComponent {
     this.inputIdentifierFromUsingComponent = "dinamic identifier"
     this.labelFromUsingComponent = "dinamic label"
     this.inputFields = [
-      {inputIdentifier: 'phone', label: 'Phone', error: 'Enter valid phone number'},
-      {inputIdentifier: 'email', label: 'Email', error: 'Enter valid email'},
-      {inputIdentifier: 'street', label: 'Street', error: 'Enter valid street'},
+      {inputIdentifier: 'phone', label: 'Phone', error: 'Enter valid phone number', regex: /^[a-zA-Z]{3}/},
+      {
+        inputIdentifier: 'email',
+        label: 'Email',
+        error: 'Enter valid email',
+        regex: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+      },
+      {inputIdentifier: 'street', label: 'Street', error: 'Enter valid street', regex: /^[a-zA-Z]{3}/},
     ];
   }
 

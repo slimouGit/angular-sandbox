@@ -10,6 +10,7 @@ export class InputFieldComponent {
   @Input() inputIdentifier: string;
   @Input() label: string;
   @Input() error: string;
+  @Input() regex: any;
   value: string;
   invalid: boolean;
 
@@ -18,7 +19,7 @@ export class InputFieldComponent {
   validateInput() {
     this.invalid = false;
     const currentValue = this.inputField.nativeElement.value;
-    if (currentValue.length >= 3) {
+    if (currentValue.match(this.regex)) {
       this.value = currentValue;
     } else {
       this.invalid = true;
