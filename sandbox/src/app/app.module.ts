@@ -45,6 +45,7 @@ import {InputValidationComponent} from './input-validation/input-validation.comp
 import { TextComponent } from './ui-components/text/text.component';
 import { UsingComponentsComponent } from './ui-components/using-components/using-components.component';
 import { InputFieldComponent } from './ui-components/input-field/input-field.component';
+import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { InputFieldComponent } from './ui-components/input-field/input-field.com
     InputValidationComponent,
     TextComponent,
     UsingComponentsComponent,
-    InputFieldComponent
+    InputFieldComponent,
+    PdfViewerComponent
   ],
   imports: [
     RoutingModule,

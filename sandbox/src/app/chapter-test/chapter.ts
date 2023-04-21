@@ -1,4 +1,5 @@
-import {Status} from "./status";
+import { Status } from "./status";
+
 
 export interface Chapter {
   name:string;
