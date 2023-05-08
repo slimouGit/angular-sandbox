@@ -46,6 +46,8 @@ import { TextComponent } from './ui-components/text/text.component';
 import { UsingComponentsComponent } from './ui-components/using-components/using-components.component';
 import { InputFieldComponent } from './ui-components/input-field/input-field.component';
 import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
+import { ExamplePdfViewerComponent } from './example-pdf-viewer/example-pdf-viewer.component';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -87,14 +89,16 @@ import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
     TextComponent,
     UsingComponentsComponent,
     InputFieldComponent,
-    PdfViewerComponent
+    PdfViewerComponent,
+    ExamplePdfViewerComponent
   ],
   imports: [
     RoutingModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxExtendedPdfViewerModule
   ],
   providers: [ShopService, BasketService],
   bootstrap: [AppComponent]
