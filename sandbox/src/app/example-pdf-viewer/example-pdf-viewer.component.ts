@@ -22,7 +22,14 @@ export class ExamplePdfViewerComponent {
     // Increasing this setting allows your users to use higher zoom factors,
     // trading image quality for performance.
     // document.getElementById("download").style.display = "hidden";
+    this.openEditor();
 
 
+  }
+
+  private openEditor() {
+    setTimeout(function () {
+      document.getElementById('editorInk').click();
+    }, 3000);
   }
 }
