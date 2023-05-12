@@ -1,10 +1,11 @@
-<ngx-extended-pdf-viewer [height]="'60vh'" [showDownloadButton]="false"
-                         [showOpenFileButton]="false" [showPrintButton]="false" [showRotateButton]="false"
-                         [showSecondaryToolbarButton]="false" [showSidebarButton]="false" [showTextEditor]="false"
+<div style="margin: 0px 100px;">
+  <ngx-extended-pdf-viewer [height]="'60vh'" [showDownloadButton]="false" [showOpenFileButton]="false"
+                           [showPrintButton]="false" [showRotateButton]="false" [showSecondaryToolbarButton]="false"
+                           [showSidebarButton]="false" [showTextEditor]="false" [src]="'/assets/pdfs/test.pdf'"
 
-                         [src]="'/assets/pdfs/Bootstrap-vs-Material-Design-vs-Prime-vs-Tailwind.pdf'"
-                         [useBrowserLocale]="true">
-</ngx-extended-pdf-viewer>
+                           [useBrowserLocale]="true">
+  </ngx-extended-pdf-viewer>
+</div>
 <div style="text-align: center;margin-top: 20px;  font-family: Arial;">
 
   <button class="btn-danger" style="margin-right: 20px; padding: 5px 5px;  border: none;">
