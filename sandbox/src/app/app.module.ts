@@ -42,12 +42,15 @@ import {RecieverComponent} from './dialog/reciever/reciever.component';
 import {ChapterTestComponent} from './chapter-test/chapter-test.component';
 import {PromiseComponent} from './promise/promise.component';
 import {InputValidationComponent} from './input-validation/input-validation.component';
-import { TextComponent } from './ui-components/text/text.component';
-import { UsingComponentsComponent } from './ui-components/using-components/using-components.component';
-import { InputFieldComponent } from './ui-components/input-field/input-field.component';
-import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
-import { ExamplePdfViewerComponent } from './example-pdf-viewer/example-pdf-viewer.component';
-import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import {TextComponent} from './ui-components/text/text.component';
+import {UsingComponentsComponent} from './ui-components/using-components/using-components.component';
+import {InputFieldComponent} from './ui-components/input-field/input-field.component';
+import {PdfViewerComponent} from './pdf-viewer/pdf-viewer.component';
+import {ExamplePdfViewerComponent} from './example-pdf-viewer/example-pdf-viewer.component';
+import {NgxExtendedPdfViewerModule} from 'ngx-extended-pdf-viewer';
+import {EmitSubscribeValueComponent} from './emit-subscribe-value/emit-subscribe-value.component';
+import {SubcriberOneComponent} from './emit-subscribe-value/subcriber-one/subcriber-one.component';
+import {SubcriberTwoComponent} from './emit-subscribe-value/subcriber-two/subcriber-two.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +93,10 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     UsingComponentsComponent,
     InputFieldComponent,
     PdfViewerComponent,
-    ExamplePdfViewerComponent
+    ExamplePdfViewerComponent,
+    EmitSubscribeValueComponent,
+    SubcriberOneComponent,
+    SubcriberTwoComponent
   ],
   imports: [
     RoutingModule,
