@@ -1,8 +1,8 @@
 <div style="margin: 0px 100px;">
-  <ngx-extended-pdf-viewer [height]="'60vh'" [showDownloadButton]="false" [showOpenFileButton]="false"
-                           [showPrintButton]="false" [showRotateButton]="false" [showSecondaryToolbarButton]="false"
-                           [showSidebarButton]="false" [showTextEditor]="false" [src]="'/assets/pdfs/test.pdf'"
-
+  <ngx-extended-pdf-viewer (pdfDownloaded)="savePdf()" [height]="'60vh'" [showDownloadButton]="true"
+                           [showOpenFileButton]="false" [showPrintButton]="false" [showRotateButton]="false"
+                           [showSecondaryToolbarButton]="false" [showSidebarButton]="false" [showTextEditor]="false"
+                           [src]="'/assets/pdfs/test.pdf'"
                            [useBrowserLocale]="true">
   </ngx-extended-pdf-viewer>
 </div>

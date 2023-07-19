@@ -27,9 +27,14 @@ export class ExamplePdfViewerComponent {
 
   }
 
+  savePdf(): void {
+    console.log("DOWNLOAD PDF")
+  }
+
   private openEditor() {
     setTimeout(function () {
       document.getElementById('editorInk').click();
     }, 3000);
   }
+
 }
