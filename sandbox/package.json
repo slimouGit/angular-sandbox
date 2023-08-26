@@ -20,7 +20,7 @@
     "@angular/router": "^14.0.0",
     "@types/pdfjs-dist": "2.1.6",
     "bootstrap": "^3.4.1",
-    "ngx-extended-pdf-viewer": "^17.0.0-alpha.3",
+    "ngx-extended-pdf-viewer": "^18.0.0-beta.4",
     "pdfjs-dist": "2.5.207",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.0.4",
-    "@angular/cli": "~14.0.4",
+    "@angular/cli": "^14.2.12",
     "@angular/compiler-cli": "^14.0.0",
     "@types/jasmine": "~4.0.0",
     "jasmine-core": "~4.1.0",

@@ -13,22 +13,33 @@ export class ExamplePdfViewerComponent {
    *  to print programmatically, and to show or hide layers by a method call.
    */
   constructor(private pdfService: NgxExtendedPdfViewerService) {
-    /* More likely than not you don't need to tweak the pdfDefaultOptions.
-       They are a collecton of less frequently used options.
-       To illustrate how they're used, here are two example settings: */
     pdfDefaultOptions.doubleTapZoomFactor = '150%'; // The default value is '200%'
     pdfDefaultOptions.maxCanvasPixels = 4096 * 4096 * 5; // The default value is 4096 * 4096 pixels,
-    // but most devices support much higher resolutions.
-    // Increasing this setting allows your users to use higher zoom factors,
-    // trading image quality for performance.
-    // document.getElementById("download").style.display = "hidden";
     this.openEditor();
-
-
   }
 
   savePdf(): void {
     console.log("DOWNLOAD PDF")
+  }
+
+  saveAnnotation(): void {
+    const annotations = this.pdfService.getSerializedAnnotations();
+    if (annotations) {
+      annotations.forEach(a => a.color = [255, 0, 0]);
+    }
+
+    this.pdfService.removeEditorAnnotations();
+    console.log("Save Annotation ", annotations);
+    if (annotations) {
+      annotations.forEach(a => {
+        this.scroll(a.pageIndex + 1, 0)
+        this.pdfService.addEditorAnnotation(a);
+      });
+    }
+  }
+
+  scroll(pageIndex: number, top: number): void {
+    this.pdfService.scrollPageIntoView(pageIndex, {top})
   }
 
   private openEditor() {
