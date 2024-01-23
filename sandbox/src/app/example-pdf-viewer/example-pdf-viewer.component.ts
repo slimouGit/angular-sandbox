@@ -12,17 +12,20 @@ export class ExamplePdfViewerComponent {
    *  to use the "find" api, to extract text and images from a PDF file,
    *  to print programmatically, and to show or hide layers by a method call.
    */
+
+  annotations:any;
   constructor(private pdfService: NgxExtendedPdfViewerService) {
     pdfDefaultOptions.doubleTapZoomFactor = '150%'; // The default value is '200%'
     pdfDefaultOptions.maxCanvasPixels = 4096 * 4096 * 5; // The default value is 4096 * 4096 pixels,
     this.openEditor();
   }
 
-  savePdf(): void {
-    console.log("DOWNLOAD PDF")
+  savePdf(): void { 
+    console.log("DOWNLOAD PDF");
   }
 
   saveAnnotation(): void {
+    console.log("PAGES ", this.pdfService.numberOfPages());
     const annotations = this.pdfService.getSerializedAnnotations();
     if (annotations) {
       annotations.forEach(a => a.color = [255, 0, 0]);
@@ -32,6 +35,24 @@ export class ExamplePdfViewerComponent {
     console.log("Save Annotation ", annotations);
     if (annotations) {
       annotations.forEach(a => {
+        this.scroll(a.pageIndex + 1, 0)
+        this.pdfService.addEditorAnnotation(a);
+      });
+    }
+  }
+
+  pdfLoaded():void{
+    alert("PDF LOADED");
+  }
+
+  hideAnnotations(): void {
+    this.annotations = this.pdfService.getSerializedAnnotations();
+    this.pdfService.removeEditorAnnotations();
+  }
+
+  showAnnotations(): void {
+    if (this.annotations) {
+      this.annotations.forEach(a => {
         this.scroll(a.pageIndex + 1, 0)
         this.pdfService.addEditorAnnotation(a);
       });

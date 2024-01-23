@@ -51,6 +51,7 @@ import {NgxExtendedPdfViewerModule} from 'ngx-extended-pdf-viewer';
 import {EmitSubscribeValueComponent} from './emit-subscribe-value/emit-subscribe-value.component';
 import {SubcriberOneComponent} from './emit-subscribe-value/subcriber-one/subcriber-one.component';
 import {SubcriberTwoComponent} from './emit-subscribe-value/subcriber-two/subcriber-two.component';
+import { EnumsComponent } from './enums/enums.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import {SubcriberTwoComponent} from './emit-subscribe-value/subcriber-two/subcri
     ExamplePdfViewerComponent,
     EmitSubscribeValueComponent,
     SubcriberOneComponent,
-    SubcriberTwoComponent
+    SubcriberTwoComponent,
+    EnumsComponent
   ],
   imports: [
     RoutingModule,
